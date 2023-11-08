@@ -1,0 +1,72 @@
+<!-- Eric Daniel Hutabarat - 121140204 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum Pemweb Minggu 5</title>
+    <style type="text/css">
+        .kalkulator{
+            padding: 10px;
+        }
+        input[type=button]{
+            padding: 5px;
+            font-size: 20px;
+        }
+        input[type=text]{
+            border: 2px solid black;
+            border-radius: 5%;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="kalkulator">
+        <div class="hasil">
+            <input placeholder="..." type="text" id="hasil" readonly>
+        </div>
+        <div>
+            <input type="button" value="1" onclick="appendNumber('1')">
+            <input type="button" value="2" onclick="appendNumber('2')">
+            <input type="button" value="3" onclick="appendNumber('3')">
+            <input type="button" value="+" onclick="appendOperator('+')">
+        </div>
+
+        <div>
+            <input type="button" value="4" onclick="appendNumber('4')">
+            <input type="button" value="5" onclick="appendNumber('5')">
+            <input type="button" value="6" onclick="appendNumber('6')">
+            <input type="button" value="-" onclick="appendOperator('-')">
+        </div>
+
+        <div>
+            <input type="button" value="7" onclick="appendNumber('7')">
+            <input type="button" value="8" onclick="appendNumber('8')">
+            <input type="button" value="9" onclick="appendNumber('9')">
+            <input type="button" value="*" onclick="appendOperator('*')">
+        </div>
+
+        <div>
+            <input type="button" value="C" onclick="clearResult()">
+            <input type="button" value="O" onclick="appendNumber('0')">
+            <input type="button" value="=" onclick="calculateResult()">
+            <input type="button" value="/" onclick="appendOperator('/')">
+        </div>
+    </div>
+    <script>
+        function appendNumber(num) {
+            document.getElementById('hasil').value += num;
+        }
+        function appendOperator(operator) {
+            document.getElementById('hasil').value += operator;
+        }
+        function clearResult(){
+            document.getElementById('hasil').value = '';
+        }
+        function calculateResult(){
+            let hasil = eval(document.getElementById('hasil').value);
+            document.getElementById('hasil').value = hasil;
+        }
+    </script>
+</body>
+</html>
