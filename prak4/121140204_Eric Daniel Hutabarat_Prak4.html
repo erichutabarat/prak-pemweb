@@ -1,0 +1,56 @@
+<!-- by Eric Daniel Hutabarat - 121140204 -->
+<!-- Praktikum Pemrograman Web RB - Tugas 4 -->
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Tugas Praktikum 4 PEMWEB</title>
+    <!-- Meta tag -->
+    <meta name="description" content="Description for this site.">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   	<!-- CSS only -->
+   	<style type="text/css">
+   		#container{
+   			border: 1px solid black;
+   			padding: 10px;
+   		}
+   		#boxhasil{
+   			border: 1px solid black;
+   			padding: 10px;
+   		}
+   	</style>
+  </head>
+<body>
+<div id="container"> 	
+    <h1>Menghitung Bilangan Ganjil Dan Genap</h1>
+    <span>Masukan bilangan bulat positif</span>
+    <input type="text" name="angka" id="angka" required>
+    <button onClick="hitung()" onSubmit="hitung()">Hitung</button>
+    <div id="boxhasil">
+    	<span id="hasil"></span>
+    </div>
+</div>
+<script type="text/javascript">
+	function hitung(){
+		const angka = document.getElementById('angka').value;
+		const hasil = document.getElementById('hasil');
+		if(angka>0){
+			let ganjil = 0;
+			let genap = 0;
+			for(let i=1; i<=angka; i++){
+				if(i%2==0){
+					genap++;
+				}
+				else{
+					ganjil++;
+				}
+			}
+			hasil.innerHTML = `Ganjil : <b>${ganjil}</b><br/>Genap : <b>${genap}</b>`;
+		}
+		else{
+			hasil.innerHTML = '<b>Harap masukan angka!</b>';
+		}
+	}
+</script>
+</body>
+</html>
